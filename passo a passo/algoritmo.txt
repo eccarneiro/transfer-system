@@ -1,0 +1,41 @@
+Instale o NestJS e o MongoDB em seu ambiente de desenvolvimento, seguindo os tutoriais oficiais de cada um deles.
+
+
+Use o Nest CLI para gerar a estrutura básica da sua aplicação, usando o comando nest new project-name.
+
+Crie os módulos, controladores e serviços da sua aplicação, usando os comandos nest generate module,
+ nest generate controller e nest generate service.
+
+
+Instale o pacote @nestjs/mongoose, que é um módulo que facilita a integração do NestJS com o MongoDB,
+ usando o comando npm install @nestjs/mongoose mongoose.
+
+Importe o módulo MongooseModule no seu módulo principal, e passe a URL de conexão com o seu banco de dados MongoDB,
+ usando o método forRoot.
+
+Defina os esquemas e modelos para os seus documentos, usando os decoradores @Schema e @Prop do pacote @nestjs/mongoose.
+
+Registre os modelos no módulo MongooseModule, usando o método forFeature.
+
+Injete os modelos nos seus serviços, usando o decorador @InjectModel.
+
+Realize as operações no banco de dados, usando os métodos dos modelos, 
+como create, find, updateOne, deleteOne, entre outros.
+
+Defina as rotas para cadastrar, consultar, atualizar e excluir usuários e operações de transferência de dinheiro,
+ usando os decoradores @Post, @Get, @Put e @Delete nos seus controladores.
+
+
+Acesse os dados enviados na requisição, usando os decoradores @Body, @Param e @Query nos seus controladores.
+
+Chame os métodos dos seus serviços nos seus controladores,
+ para realizar a lógica de negócio e interagir com o banco de dados.
+
+
+Envie as respostas para as requisições, usando o objeto response nos seus controladores.
+
+Use o pacote @nestjs/swagger para gerar a documentação da sua API de forma automática,
+ seguindo as instruções do pacote.
+
+
+
