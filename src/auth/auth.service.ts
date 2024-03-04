@@ -1,11 +1,8 @@
-import { BadRequestException, Inject, Injectable } from '@nestjs/common';
-import { Model } from 'mongoose';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { sign } from 'jsonwebtoken';
 import { LoginUserDto } from './auth-dto/create-login.dto';
-import { User } from 'src/user/interfaces/user.interface';
 import { AuthResponse } from './auth-interface/auth.interface';
 import { UserService } from 'src/user/user.service';
-
-
 
 @Injectable()
 export class AuthService {
@@ -19,7 +16,9 @@ export class AuthService {
             if (user.password !== loginUserDto.password) {
                 throw new BadRequestException('Invalid credentials');
             }
-            return { token: 'token' };
+
+            const token = sign({ user }, "secret", { expiresIn: '1h' })
+            return { token };
         } catch (error) {
             console.log(error);
         }
