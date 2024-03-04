@@ -14,4 +14,8 @@ export class CreateUserDto {
     @IsNotEmpty()
     @IsString()
     readonly document: string;
+
+    @IsNotEmpty()
+    @IsString()
+    readonly typeAccount: string;
 }

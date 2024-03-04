@@ -1,5 +1,9 @@
 export interface User extends Document {
-    name: String,
-    email: String,
-    password: String
+    name: string,
+    email: string,
+    password: string,
+    typeAccount: "normal" | "shopkeeper",
+    agency: number,
+    account: number,
+    balance: number
 }
